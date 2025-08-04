@@ -17,12 +17,12 @@
 
   const minAge = 18;
   const maxAge = 60;
-  let age = 61; //10, 17, 18, 19, 59, 60, 61
+  let age = NaN; //10, 17, 18, 19, 59, 60, 61
 
   if (typeof age != "number"){
    console.log('Incorrect data type')
   } else if (age < minAge){
-    console.log("You don't have access cause your age is " + age + " It's less then 18")
+    console.log("You don't have access cause your age is " + age + " It's less then " + minAge)
   } else if (age >= minAge && age < maxAge){
     console.log("Welcome  !")
   } else if (age > maxAge){

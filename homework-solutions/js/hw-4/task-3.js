@@ -12,10 +12,10 @@
   let age = "60"; // 10, 17, 18, 19, 59, 60, 61
   age = Number(age); // 3rd task?
 
-  if (typeof age != "number"){
+  if (typeof age != "number" || isNaN(age)){
    console.log('Incorrect data type')
   } else if (age < minAge){
-    console.log("You don't have access cause your age is " + age + " It's less then 18")
+    console.log("You don't have access cause your age is " + age + " It's less then " + minAge)
   } else if (age >= minAge && age < maxAge){
     console.log("Welcome  !")
   } else if (age > maxAge){
