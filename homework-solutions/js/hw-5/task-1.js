@@ -5,7 +5,7 @@
  */
 
 let evenNumbersResult = '';
-for (let i = 10; i >= 0; i -= 2){
+for (let i = 10; i >= 0; i--){
     if (i % 2 !== 0) continue;
     evenNumbersResult += i;
 
