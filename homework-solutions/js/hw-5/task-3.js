@@ -7,4 +7,20 @@ const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
 
-export { vowelsAndConsonantsResult };
+const vowels = 'aeiou';
+let vowelsCount = 0;
+let consonantsCount = 0;
+
+for (let i = 0; i < word.length; i++){
+    let char = word[i];
+    if (vowels.includes(char)){
+        vowelsCount++;
+    } else {
+        consonantsCount++
+    }
+}
+
+vowelsAndConsonantsResult = `${word} contains ${vowelsCount} vowels and ${consonantsCount} consonants`;
+console.log(vowelsAndConsonantsResult)
+
+//export { vowelsAndConsonantsResult };
