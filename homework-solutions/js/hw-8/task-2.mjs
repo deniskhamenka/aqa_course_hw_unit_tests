@@ -19,7 +19,21 @@ const words = [
 ];
 
 function sortedByVowels(wordsArr) {
-  // Ваш код
-}
+const vowels = 'aeiou';
 
+  function countVowels(word) {
+    let count = 0;
+    for (let char of word.toLowerCase()) {
+      if (vowels.includes(char)) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  return wordsArr.slice().sort(function(a, b) {
+    return countVowels(a) - countVowels(b);
+  });
+}
+//console.log(sortedByVowels(words))
 export { sortedByVowels };
