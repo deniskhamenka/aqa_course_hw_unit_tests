@@ -6,7 +6,7 @@
 
 let evenNumbersResult = '';
 for (let i = 10; i >= 0; i--){
-    if (i % 2 !== 0) continue;
+    if (i % 2 !== 0);
     evenNumbersResult += i;
 
     if (i !== 0){
@@ -28,11 +28,9 @@ console.log(evenNumbersResult);
 
 let smilePatternResult = '';
 for (let i = 1; i <= 5; i++){
-    let line = '';
     for (let j = 1; j <= i; j++){
-        line += ':)';
+        smilePatternResult += ':)';
     }
-    smilePatternResult += line;
     if (i < 5){
         smilePatternResult += '\n';
     }

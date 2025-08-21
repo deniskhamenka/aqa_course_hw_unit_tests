@@ -8,15 +8,16 @@ const word = 'hello';
 let vowelsAndConsonantsResult = '';
 
 const vowels = 'aeiou';
+const consonants = 'bcdfghjklmnpqrstvwxyz';
 let vowelsCount = 0;
 let consonantsCount = 0;
 
 for (let i = 0; i < word.length; i++){
-    let char = word[i];
+    let char = word[i].toLowerCase();
     if (vowels.includes(char)){
         vowelsCount++;
-    } else {
-        consonantsCount++
+    } else if (consonants.includes(char)) {
+        consonantsCount++;
     }
 }
 
