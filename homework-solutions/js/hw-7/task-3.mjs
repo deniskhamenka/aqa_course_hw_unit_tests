@@ -8,8 +8,17 @@
 
 */
 
-function digitalRoot(number) {
-  // Ваш код
-}
+function digitalRoot(num) {
+ if (typeof num !== 'number'|| num < 0)
+  return null;
 
+if (num <= 9) return num;
+const digits = String(num);
+let sum = 0;
+  for (let i = 0; i < digits.length; i++) {
+    sum += Number(digits[i]);
+  }
+return digitalRoot(sum);
+}
+//console.log(digitalRoot(0));
 export { digitalRoot };
