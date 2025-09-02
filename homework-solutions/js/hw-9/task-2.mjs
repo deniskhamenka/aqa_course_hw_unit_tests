@@ -14,23 +14,52 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
-}
+  if (typeof character.name === 'string' && typeof character.age === 'number') {
+    characters.push(character);
+  } else {
+    throw new TypeError('Invalid character');
+  }
+};
+
+// console.log("before:", characters);
+// addCharacter({ name: 'Denis', age: 27 });
+// console.log("after:", characters);
+
 
 function getCharacter(name) {
-  // Ваш код
+  return characters.find (arr => arr.name === name);
 }
+//console.log(getCharacter('Fred'));
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (typeof minAge !== 'number'){
+    throw new TypeError('minAge must be a number');
+  }
+  return characters.filter (arr => arr.age >= minAge);
 }
+//console.log(getCharactersByAge(44));
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  const index = characters.findIndex(arr => arr.name === name);
+  if (index === -1) {
+    throw new Error('Character not found');
+  }
+  const current = characters[index];
+  if (newCharacter && typeof newCharacter === 'object') {
+    if ('name' in newCharacter) current.name = newCharacter.name;
+    if ('age'  in newCharacter) current.age  = newCharacter.age;
+  }
 }
+//updateCharacter('Barney', { age: 36 });
+//console.log("after update:", characters);
 
 function removeCharacter(name) {
-  // Ваш код
+  const index = characters.findIndex(arr => arr.name === name);
+  if (index === -1) {
+    throw new Error('Character not found');
+  }
+  characters.splice(index, 1);
 }
-
+//removeCharacter('Jack');
+//console.log("after delete:", characters);
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
