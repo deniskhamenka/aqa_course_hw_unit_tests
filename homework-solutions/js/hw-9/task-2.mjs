@@ -40,14 +40,18 @@ function getCharactersByAge(minAge) {
 //console.log(getCharactersByAge(44));
 
 function updateCharacter(name, newCharacter) {
-  const index = characters.findIndex(arr => arr.name === name);
-  if (index === -1) {
+  const char = getCharacter(name); // ищем персонажа
+
+  if (!char) {
     throw new Error('Character not found');
   }
-  const current = characters[index];
-  if (newCharacter && typeof newCharacter === 'object') {
-    if ('name' in newCharacter) current.name = newCharacter.name;
-    if ('age'  in newCharacter) current.age  = newCharacter.age;
+
+  if (newCharacter.name !== undefined) {
+    char.name = newCharacter.name;
+  }
+
+  if (newCharacter.age !== undefined) {
+    char.age = newCharacter.age;
   }
 }
 //updateCharacter('Barney', { age: 36 });

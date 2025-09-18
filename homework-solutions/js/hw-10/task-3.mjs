@@ -16,7 +16,7 @@
 */
 
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.round(Math.random() * (max - min) + min);
 }
 
 function uniqueRandomGenerator(n) {
